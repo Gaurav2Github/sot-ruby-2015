@@ -1,0 +1,12 @@
+<h1><%= @user.name %>'s barkstream (@<%= @user.username %>)</h1>
+
+<% @woofs.each do |woof| %>
+  <div class="woof">
+    <div class="message"><%= woof.message %></div>
+    <div class="time"><%= woof.created_at.strftime("%e %b %Y %H:%M") %></div>
+  </div>
+<% end %>
+
+<p>
+  <%= link_to "Enter a new woof...", new_woof_path %>
+</p>
